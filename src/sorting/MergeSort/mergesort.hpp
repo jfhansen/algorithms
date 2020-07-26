@@ -14,7 +14,9 @@
 #include <limits>
 #include <random>
 
-// Instantiate mergeSort(...) and merge(...) functions
+#ifndef MERGESORT_HPP
+#define MERGESORT_HPP
+
 
 template <class It>
 void merge(It first, It mid, It last)
@@ -114,23 +116,5 @@ void mergeSort(T *first, T *last)
         merge(first, mid, last);
     }
 }
-/*
-int main() {
-    size_t N = 1 << 3;
-    // Instantiate list
-    //double list[N];
-    std::vector<double> *lst = new std::vector<double>;
-    lst->resize(N);
 
-    // Generate random values from uniform distribution
-    std::mt19937 rng;
-    std::uniform_real_distribution<double> dist(-100,100);
-
-    // Fill list
-    //std::generate(list, list+N, [&] { return dist(rng); } );
-    std::generate(lst->begin(), lst->end(), [&] { return dist(rng); } );
-
-    //mergeSort(&list[0], &list[N]);
-    mergeSort(lst->begin(), lst->end());
-    return 0;
-}*/
+#endif
