@@ -15,6 +15,7 @@
 #include <thread>
 #include <vector>
 #include <assert.h>
+#include <string>
 
 #include "mergesort.hpp"
 
@@ -62,7 +63,7 @@ static void BM_merge_sort_vec(benchmark::State &s)
 
 }
 
-BENCHMARK(BM_merge_sort)->DenseRange(16,18)->Unit(benchmark::kMillisecond);
-BENCHMARK(BM_merge_sort_vec)->DenseRange(16,18)->Unit(benchmark::kMillisecond);
+BENCHMARK(BM_merge_sort)->DenseRange(10,13)->Unit(benchmark::kMillisecond);
+BENCHMARK(BM_merge_sort_vec)->DenseRange(10,13)->Unit(benchmark::kMillisecond);
 
 BENCHMARK_MAIN();
